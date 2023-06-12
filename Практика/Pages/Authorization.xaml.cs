@@ -23,10 +23,14 @@ namespace Практика.Pages
     {
         Car_DealershipDBEntities context;
         DispatcherTimer timer;
-        public Authorization(Car_DealershipDBEntities cont)
+        Window window;
+        public Authorization(Car_DealershipDBEntities cont, Window w)
         {
             InitializeComponent();
             context = cont;
+            window= w;
+            ButtonMy.Visibility = Visibility.Collapsed;
+            //passwordBox.Background = Background.GetValue();
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 30);
             timer.Tick += Timer_Tick;
@@ -49,16 +53,21 @@ namespace Практика.Pages
             {
                 if (user.Password.Equals(pass))
                 {
-                    MessageBox.Show("Вы успешно авторизованы!!!");
+                    //MessageBox.Show("Вы успешно авторизованы!!!");
                     countClick = 0;
+                    NavigationService.Navigate(new MainMenuPage(context, window));
+                    
                 }
                 else
                 {
                     MessageBox.Show("Вы ввели неверный пароль!!!");
                     if (countClick >= 3)
                     {
+                        ButtonMy.Visibility = Visibility.Visible;
                         ButtonEnter.IsEnabled = false;
                         timer.Start();
+
+
                     }
                 }
             }
@@ -67,10 +76,31 @@ namespace Практика.Pages
                 MessageBox.Show("Такого пользователя не существует!!!");
                 if (countClick >= 3)
                 {
+                    ButtonMy.Visibility = Visibility.Visible;
                     ButtonEnter.IsEnabled = false;
                     timer.Start();
+
+
                 }
             }
+        }
+
+        private void RegClick(object sender, RoutedEventArgs e)
+        {
+            Registration regWindow = new Registration(context);
+            regWindow.Show();
+        }
+
+        private void CcClick(object sender, RoutedEventArgs e)
+        {
+            Data dataWindow = new Data(context);
+            dataWindow.Show();
+
+            //для страниц
+            //NavigationService.Navigate(new Page());
+            
+            //User us = context.User.Find(loginBox.Text);
+            //NavigationService.Navigate(new Page(us));
         }
     }
 }

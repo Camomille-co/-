@@ -27,7 +27,7 @@ namespace Практика
             InitializeComponent();
             //DownloadPictures();
             context = new Car_DealershipDBEntities();
-            myFrame.Navigate(new Pages.Authorization(context));
+            myFrame.Navigate(new Pages.Authorization(context, this));
         }
 
         //public void DownloadPictures()

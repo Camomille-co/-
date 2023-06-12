@@ -1,0 +1,56 @@
+﻿<Page x:Class="Практика.Pages.Sotrudniki"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Практика.Pages"
+      mc:Ignorable="d" 
+      Loaded="Page_Loaded"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Автосалон 'FastCar'">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Frame Name="frameToBasePage" Grid.Column="1" />
+        <StackPanel Orientation="Vertical" Background="#009fda">
+            <Image Source="/Images/tmp_b7a64ba5-a4c4-49e2-b813-0bf1fa5a9dcd.png" Height="100"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="210"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Margin="30,1,30,1" Height="43" FontSize="12" Click="sotrClick">Сотрудники</Button>
+                <Button Grid.Row="1" Margin="30,1,30,1" Height="43" FontSize="12" Click="zakazClick">Заказы</Button>
+                <Button Grid.Row="5" Margin="30,1,30,1" Height="43" FontSize="12">Выход</Button>
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Background="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="340"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Margin="5" Height="20" Width="20" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Click="GoBack"/>
+                <TextBlock Grid.Row="0" Text="Автосалон 'FastCar'" HorizontalAlignment="Center" FontSize="25"/>
+                <DataGrid Name="table" Grid.Row="1" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Width="*" Binding="{Binding Id}"/>
+                        <DataGridTextColumn Header="Фио" Width="*" Binding="{Binding FIO}"/>
+                        <DataGridTextColumn Header="Стаж" Width="*" Binding="{Binding Experiance}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Grid.Row="2" Height="45" Margin="10" HorizontalAlignment="Left" Width="150" Content="Добавить"/>
+                <Button Grid.Row="2" Height="45" Margin="10" HorizontalAlignment="Center"  Width="150" Content="Удалить"/>
+                <Button Grid.Row="2" Height="45" Margin="10" HorizontalAlignment="Right"  Width="150" Content="Редактировать"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

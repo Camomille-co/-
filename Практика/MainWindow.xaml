@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Практика"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" Height="700" Width="1300" MinHeight="600" MinWidth="1000">
     <Grid>
-        <Frame Name="myFrame"/>
+        <Frame Name="myFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
