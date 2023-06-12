@@ -21,14 +21,14 @@ namespace Практика.Pages
     public partial class AddPage : Page
     {
         Car_DealershipDBEntities context;
-        Zakazi zakazi;
+        Purchase zakazi;
         public AddPage( Car_DealershipDBEntities cont)
         {
             InitializeComponent();
             context = cont;
         }
         //для редактирования
-        public AddPage(Car_DealershipDBEntities cont, Zakazi zak)
+        public AddPage(Car_DealershipDBEntities cont, Purchase zak)
         {
             InitializeComponent();
             context = cont;
@@ -47,13 +47,11 @@ namespace Практика.Pages
         {
             try
             {
-                //Product prod = ModelBox.SelectedItem as Product;
-                //Client cl = FIOBox.SelectedItem as Client;
-                //Manager man = ManagerBox.SelectesItem as Manager;
+                Product prod = ModelBox.SelectedItem as Product;
+                Client cl = FIOBox.SelectedItem as Client;
+                Manager man = ManagerBox.SelectesItem as Manager;
 
-                Product prod = ModelBox.DataContext as Product;
-                Client cl = FIOBox.DataContext as Client;
-                Manager man = ManagerBox.DataContext as Manager;
+
 
                 zakazi.CodeProduct = prod.Code;
                 zakazi.Product = prod;
@@ -83,13 +81,11 @@ namespace Практика.Pages
         {
             try
             {
-                //Product prod = ModelBox.SelectedItem as Product;
-                //Client cl = FIOBox.SelectedItem as Client;
-                //Manager man = ManagerBox.SelectesItem as Manager;
+                Product prod = ModelBox.SelectedItem as Product;
+                Client cl = FIOBox.SelectedItem as Client;
+                Manager man = ManagerBox.SelectesItem as Manager;
 
-                Product prod = ModelBox.DataContext as Product;
-                Client cl = FIOBox.DataContext as Client;
-                Manager man = ManagerBox.DataContext as Manager;
+
 
                 Purchase pur = new Purchase()
                 {
