@@ -21,19 +21,6 @@ namespace Практика.Pages
     public partial class Zakazi : Page
     {
         Car_DealershipDBEntities context;
-
-        //public int Id { get; set; }
-        //public int CodeProduct { get; set; }
-        //public int IdClient { get; set; }
-        //public int idManeger { get; set; }
-        //public System.DateTime DatePuschase { get; set; }
-        //public bool Delivery { get; set; }
-        //public string PaymentType { get; set; }
-
-        //public virtual Client Client { get; set; }
-        //public virtual Manager Manager { get; set; }
-        //public virtual Product Product { get; set; }
-
         public Zakazi(Car_DealershipDBEntities cont)
         {
             InitializeComponent();
