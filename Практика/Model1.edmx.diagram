@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="45f02b8cd01e47a1aefeddeddf94c05b" Name="Diagram1">
+      <Diagram DiagramId="cd51887eb6264177b6757720f9a7be1f" Name="Diagram1">
         <EntityTypeShape EntityType="Car_DealershipDBModel.Client" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Car_DealershipDBModel.Manager" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Car_DealershipDBModel.Mark" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Car_DealershipDBModel.Product" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Car_DealershipDBModel.Product" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Car_DealershipDBModel.Purchase" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Car_DealershipDBModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Car_DealershipDBModel.TechnicalData" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />

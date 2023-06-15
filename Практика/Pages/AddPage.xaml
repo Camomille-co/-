@@ -26,17 +26,17 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.ColumnSpan="2" FontSize="30" Text="Добавить заказ" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock Grid.Row="2" HorizontalAlignment="Right" FontSize="25" VerticalAlignment="Center">Модель</TextBlock>
-        <TextBox Grid.Row="2" Grid.Column="2" x:Name="ModelBox" HorizontalAlignment="Left" Width="250" Height="30" VerticalAlignment="Center"/>
+        <ComboBox Margin="10" DisplayMemberPath="Model" Grid.Row="2" Grid.Column="2" x:Name="ModelBox" HorizontalAlignment="Left" Width="250" Height="40" VerticalAlignment="Center"/>
         <TextBlock Grid.Row="3" HorizontalAlignment="Right" FontSize="25" VerticalAlignment="Center">Фио клиента</TextBlock>
-        <TextBox Grid.Row="3" Grid.Column="2" x:Name="FIOBox" HorizontalAlignment="Left" Width="250" Height="30" VerticalAlignment="Center"/>
+        <ComboBox Margin="10" DisplayMemberPath="FIO" Grid.Row="3" Grid.Column="2" x:Name="FIOBox" HorizontalAlignment="Left" Width="250" Height="40" VerticalAlignment="Center"/>
         <TextBlock Grid.Row="4" HorizontalAlignment="Right" FontSize="25" VerticalAlignment="Center">Менеджер</TextBlock>
-        <TextBox Grid.Row="4" Grid.Column="2" x:Name="ManagerBox" HorizontalAlignment="Left" Width="250" Height="30" VerticalAlignment="Center"/>
+        <ComboBox Margin="10" DisplayMemberPath="FIO" Grid.Row="4" Grid.Column="2" x:Name="ManagerBox" HorizontalAlignment="Left" Width="250" Height="40" VerticalAlignment="Center"/>
         <TextBlock Grid.Row="5" HorizontalAlignment="Right" FontSize="25" VerticalAlignment="Center">Дата заказа</TextBlock>
-        <TextBox Grid.Row="5" Grid.Column="2" x:Name="DateBox" HorizontalAlignment="Left" Width="250" Height="30" VerticalAlignment="Center"/>
-        <TextBlock Grid.Row="6" HorizontalAlignment="Right" FontSize="25" VerticalAlignment="Center">Нужна доставка(True/False)</TextBlock>
-        <TextBox Grid.Row="6" Grid.Column="2" x:Name="DeliveryBox" HorizontalAlignment="Left" Width="250" Height="30" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="5" Grid.Column="2" x:Name="DateBox" HorizontalAlignment="Left" Width="250" Height="40" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="6" HorizontalAlignment="Right" FontSize="25" VerticalAlignment="Center">Нужна доставка(да/нет)</TextBlock>
+        <TextBox Grid.Row="6" Grid.Column="2" x:Name="DeliveryBox" HorizontalAlignment="Left" Width="250" Height="40" VerticalAlignment="Center"/>
         <TextBlock Grid.Row="7" HorizontalAlignment="Right" FontSize="25" VerticalAlignment="Center">Способ оплаты</TextBlock>
-        <TextBox Grid.Row="7" Grid.Column="2" x:Name="PayBox" HorizontalAlignment="Left" Width="250" Height="30" VerticalAlignment="Center"/>
+        <ComboBox Margin="10" DisplayMemberPath="PaymentType" Grid.Row="7" Grid.Column="2" x:Name="PayBox" HorizontalAlignment="Left" Width="250" Height="40" VerticalAlignment="Center"/>
         <Button Name="buttonAU" Grid.Row="8" HorizontalAlignment="Right" VerticalAlignment="Center" Width="120" Height="40" Margin="10" Click="AddZakazClick">Добавить</Button>
         <Button Grid.Row="8" Grid.Column="1" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="120" Height="40" Margin="10" Click="CanselClick">Отменить</Button>
     </Grid>

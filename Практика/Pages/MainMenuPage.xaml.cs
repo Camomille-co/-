@@ -35,11 +35,6 @@ namespace Практика.Pages
             Window.Close();
         }
 
-        private void SotrClick(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Sotrudniki(context));
-        }
-
         private void zakazClick(object sender, RoutedEventArgs e)
         {
             frameToBasePage.Navigate(new Zakazi(context));
@@ -62,7 +57,7 @@ namespace Практика.Pages
 
 
             //удаление
-            MessageBoxResult result = MessageBox.Show("Вы точно хотите удалить данный заказ?","Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult result = MessageBox.Show("Вы точно хотите удалить данный заказ?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
                 try
@@ -77,9 +72,12 @@ namespace Практика.Pages
                     MessageBox.Show("Ошибка!");
                 }
             }
-            //редактировать (кнопка Edit у контекстного меню)
-            Zakazi zak = (sender as Hyperlink).DataContext as Zakazi;
-            NavigationService.Navigate(new AddPage(context, zak));
+
+        }
+
+        private void TovarClick(object sender, RoutedEventArgs e)
+        {
+            frameToBasePage.Navigate(new ProductPage(context));
         }
     }
 }

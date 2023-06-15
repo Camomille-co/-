@@ -41,6 +41,7 @@
           <Property Name="Model" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Color" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="IsPesence" Type="bit" Nullable="false" />
+          <Property Name="Image" Type="image" />
         </EntityType>
         <EntityType Name="Purchase">
           <Key>
@@ -268,6 +269,7 @@
           <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IsPesence" Type="Boolean" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Mark" Relationship="Self.FK_Product_Mark" FromRole="Product" ToRole="Mark" />
           <NavigationProperty Name="Purchase" Relationship="Self.FK_Purchase_Product" FromRole="Product" ToRole="Purchase" />
           <NavigationProperty Name="TechnicalData" Relationship="Self.FK_TechnicalData_Product" FromRole="Product" ToRole="TechnicalData" />
@@ -506,6 +508,7 @@
                 <ScalarProperty Name="Model" ColumnName="Model" />
                 <ScalarProperty Name="Color" ColumnName="Color" />
                 <ScalarProperty Name="IsPesence" ColumnName="IsPesence" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

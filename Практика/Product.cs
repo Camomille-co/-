@@ -27,6 +27,7 @@ namespace Практика
         public string Model { get; set; }
         public string Color { get; set; }
         public bool IsPesence { get; set; }
+        public byte[] Image { get; set; }
     
         public virtual Mark Mark { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

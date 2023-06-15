@@ -22,6 +22,7 @@ namespace Практика
     public partial class MainWindow : Window
     {
         Car_DealershipDBEntities context;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace Практика
         //    {
         //        foreach (var item in context.Product.ToList())
         //        {
-        //            item.Photo = File.ReadAllBytes($"C:/Dishes/{item.Id}.jpg");
+        //            item.Image = File.ReadAllBytes($"C:/Users/admin/Music/{item.Code}.jpg");
         //        }
         //        context.SaveChanges();
         //    }
