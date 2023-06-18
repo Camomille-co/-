@@ -59,8 +59,8 @@ namespace Практика.Pages
 
                 zakazi.CodeProduct = prod.Code;
                 zakazi.Product = prod;
-                zakazi.IdClient = Convert.ToInt32(cl.FIO);
-                zakazi.idManeger = Convert.ToInt32(man.FIO);
+                zakazi.IdClient = cl.Id;
+                zakazi.idManeger = man.Id;
                 zakazi.DatePuschase = Convert.ToDateTime(DateBox.Text);
                 zakazi.Delivery = DeliveryBox.Text.ToLower().Equals("да") ? true : false;
                 zakazi.PaymentType = PayBox.Text;
