@@ -28,6 +28,7 @@ namespace Практика.Pages
             table.ItemsSource = context.Purchase.ToList();
             var categoryList = context.Purchase.ToList();
             categoryList.Insert(0, new Purchase() { PaymentType = "Все" });
+            //categoryList.Insert(0, new Purchase() { Delivery = true && false });
             categoryBox.ItemsSource = categoryList;
             categoryBox.SelectedIndex = 0;
         }
@@ -87,8 +88,8 @@ namespace Практика.Pages
             if (categoryBox.SelectedIndex != 0)
             {
                 Purchase pur = categoryBox.SelectedItem as Purchase;
-                //list = list.Where(x => x.Delivery == pur.Delivery).ToList();
-                list = list.Where(x => x.Delivery == pur.Delivery || x.PaymentType == pur.PaymentType).ToList();
+                list = list.Where(x => x.PaymentType == pur.PaymentType).ToList();
+                //list = list.Where(x => x.Delivery == pur.Delivery && x.PaymentType == pur.PaymentType).ToList();
             }
             if (!string.IsNullOrWhiteSpace(poiskBox.Text))
             {

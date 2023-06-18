@@ -94,11 +94,11 @@ namespace Практика.Pages
                     Id = context.Purchase.ToList().Last().Id + 1,                // Id = context.Purchase.Count() + 1  - если то не сработает
                     CodeProduct = prod.Code,
                     Product = prod,
-                    IdClient = Convert.ToInt32(cl.FIO),
-                    idManeger = Convert.ToInt32(man.FIO),
-                    DatePuschase = Convert.ToDateTime(DateBox.Text),             //10.05.2023 0:00:00 вот так вводить
+                    IdClient = cl.Id,
+                    idManeger = man.Id,
+                    DatePuschase = Convert.ToDateTime(DateBox.Text),             
                     Delivery = DeliveryBox.Text.ToLower().Equals("да") ? true : false,
-                    PaymentType = PayBox.Text, 
+                    PaymentType = PayBox.Text,
                     Client = cl,
                     Manager = man
                 };
@@ -106,11 +106,11 @@ namespace Практика.Pages
                 context.SaveChanges();
                 NavigationService.Navigate(new Zakazi(context));
             }
-            catch(FormatException)
+            catch(FormatException) //Convert.To...
             {
                 MessageBox.Show("Ошибка вводимых данных!");
             }
-            catch
+            catch //Во всех остальных случаях
             {
                 MessageBox.Show("Ошибка!");
             }
