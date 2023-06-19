@@ -29,7 +29,7 @@ namespace Практика.Pages
         {
             InitializeComponent();
             context = cont;
-            window= w;
+            window = w;
             ButtonMy.Visibility = Visibility.Collapsed;
             //passwordBox.Background = Background.GetValue();
             timer = new DispatcherTimer();
@@ -57,7 +57,7 @@ namespace Практика.Pages
                     //MessageBox.Show("Вы успешно авторизованы!!!");
                     countClick = 0;
                     NavigationService.Navigate(new MainMenuPage(context, window));
-                    
+
                 }
                 else
                 {
@@ -99,7 +99,7 @@ namespace Практика.Pages
 
             //для страниц
             //NavigationService.Navigate(new Page());
-            
+
             //User us = context.User.Find(loginBox.Text);
             //NavigationService.Navigate(new Page(us));
         }
