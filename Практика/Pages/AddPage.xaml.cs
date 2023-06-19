@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,15 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Практика.Pages
+namespace РџСЂР°РєС‚РёРєР°.Pages
 {
     /// <summary>
-    /// Так как для добавления и редактирования один и тот же интерфейс,
-    /// можно создать одну страницу для двух действий
-    /// Но будут различаться конструкторы: один для добавления, второй для редактирвоания
-    /// для кнопки также будет создано 2 разных события. 
-    /// Первое для добавления привязывается через интерфейс (.xaml)
-    /// Второе для редактирования привязывается в соответствующем конструкторе
+    /// РўР°Рє РєР°Рє РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ Рё СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ РѕРґРёРЅ Рё С‚РѕС‚ Р¶Рµ РёРЅС‚РµСЂС„РµР№СЃ,
+    /// РјРѕР¶РЅРѕ СЃРѕР·РґР°С‚СЊ РѕРґРЅСѓ СЃС‚СЂР°РЅРёС†Сѓ РґР»СЏ РґРІСѓС… РґРµР№СЃС‚РІРёР№
+    /// РќРѕ Р±СѓРґСѓС‚ СЂР°Р·Р»РёС‡Р°С‚СЊСЃСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹: РѕРґРёРЅ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ, РІС‚РѕСЂРѕР№ РґР»СЏ СЂРµРґР°РєС‚РёСЂРІРѕР°РЅРёСЏ
+    /// РґР»СЏ РєРЅРѕРїРєРё С‚Р°РєР¶Рµ Р±СѓРґРµС‚ СЃРѕР·РґР°РЅРѕ 2 СЂР°Р·РЅС‹С… СЃРѕР±С‹С‚РёСЏ. 
+    /// РџРµСЂРІРѕРµ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ РїСЂРёРІСЏР·С‹РІР°РµС‚СЃСЏ С‡РµСЂРµР· РёРЅС‚РµСЂС„РµР№СЃ (.xaml)
+    /// Р’С‚РѕСЂРѕРµ РґР»СЏ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ РїСЂРёРІСЏР·С‹РІР°РµС‚СЃСЏ РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµРј РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРµ
     /// </summary>
     public partial class AddPage : Page
     {
@@ -29,14 +29,14 @@ namespace Практика.Pages
         Purchase zakazi;
 
         /// <summary>
-        /// конструктор для Добавления элемента
+        /// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ Р”РѕР±Р°РІР»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р°
         /// </summary>
         /// <param name="cont"></param>
         public AddPage(Car_DealershipDBEntities cont)
         {
             InitializeComponent();
             context = cont;
-            //выводим в раскрывающийся список все элементы
+            //РІС‹РІРѕРґРёРј РІ СЂР°СЃРєСЂС‹РІР°СЋС‰РёР№СЃСЏ СЃРїРёСЃРѕРє РІСЃРµ СЌР»РµРјРµРЅС‚С‹
             ModelBox.ItemsSource = context.Product.ToList();
             FIOBox.ItemsSource = context.Client.ToList();
             ManagerBox.ItemsSource = context.Manager.ToList();
@@ -45,8 +45,8 @@ namespace Практика.Pages
             //string name = a.Client.FIO;
         }
         /// <summary>
-        /// конструктор для редактирования.
-        /// zak - заказ для редактирования
+        /// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ.
+        /// zak - Р·Р°РєР°Р· РґР»СЏ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ
         /// </summary>
         /// <param name="cont"></param>
         /// <param name="zak"></param>
@@ -55,11 +55,11 @@ namespace Практика.Pages
             InitializeComponent();
             context = cont;
             zakazi = zak;
-            //меняем надпись на кнопке
-            buttonAU.Content = "Редактировать";
-            //привязываем к кнопке другой обработчик нажатия
+            //РјРµРЅСЏРµРј РЅР°РґРїРёСЃСЊ РЅР° РєРЅРѕРїРєРµ
+            buttonAU.Content = "Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ";
+            //РїСЂРёРІСЏР·С‹РІР°РµРј Рє РєРЅРѕРїРєРµ РґСЂСѓРіРѕР№ РѕР±СЂР°Р±РѕС‚С‡РёРє РЅР°Р¶Р°С‚РёСЏ
             buttonAU.Click += UpdateClick;
-            //заполняем поля на форме
+            //Р·Р°РїРѕР»РЅСЏРµРј РїРѕР»СЏ РЅР° С„РѕСЂРјРµ
             ModelBox.ItemsSource = context.Product.ToList();
             FIOBox.ItemsSource = context.Client.ToList();
             ManagerBox.ItemsSource = context.Manager.ToList();
@@ -69,12 +69,12 @@ namespace Практика.Pages
             ManagerBox.SelectedItem = zakazi.Manager;
             PayBox.SelectedItem = zakazi.PaymentType;
             DateBox.Text = zakazi.DatePuschase.ToString();
-            DeliveryBox.Text = zakazi.Delivery == true ? "Да" : "Нет";
+            DeliveryBox.Text = zakazi.Delivery == true ? "Р”Р°" : "РќРµС‚";
             PayBox.Text = zakazi.PaymentType;
         }
 
         /// <summary>
-        /// Нажатие на кнопку "Редактировать"
+        /// РќР°Р¶Р°С‚РёРµ РЅР° РєРЅРѕРїРєСѓ "Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -92,7 +92,7 @@ namespace Практика.Pages
                 zakazi.IdClient = cl.Id;
                 zakazi.idManeger = man.Id;
                 zakazi.DatePuschase = Convert.ToDateTime(DateBox.Text);
-                zakazi.Delivery = DeliveryBox.Text.ToLower().Equals("да") ? true : false;
+                zakazi.Delivery = DeliveryBox.Text.ToLower().Equals("РґР°") ? true : false;
                 zakazi.PaymentType = PayBox.Text;
                 zakazi.Client = cl;
                 zakazi.Manager = man;
@@ -101,13 +101,13 @@ namespace Практика.Pages
             }
             catch
             {
-                MessageBox.Show("Ошибка!");
+                MessageBox.Show("РћС€РёР±РєР°!");
             }
 
         }
 
         /// <summary>
-        /// Нажатие на кнопку "Отмена"
+        /// РќР°Р¶Р°С‚РёРµ РЅР° РєРЅРѕРїРєСѓ "РћС‚РјРµРЅР°"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -118,7 +118,7 @@ namespace Практика.Pages
         }
 
         /// <summary>
-        /// Нажатие на кнопку "Добавить"
+        /// РќР°Р¶Р°С‚РёРµ РЅР° РєРЅРѕРїРєСѓ "Р”РѕР±Р°РІРёС‚СЊ"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -127,38 +127,38 @@ namespace Практика.Pages
         {
             try
             {
-                //получаем выбранные элементы
+                //РїРѕР»СѓС‡Р°РµРј РІС‹Р±СЂР°РЅРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹
                 Product prod = ModelBox.SelectedItem as Product;
                 Client cl = FIOBox.SelectedItem as Client;
                 Manager man = ManagerBox.SelectedItem as Manager;
-                //создаем заказ и заполняем его поля
+                //СЃРѕР·РґР°РµРј Р·Р°РєР°Р· Рё Р·Р°РїРѕР»РЅСЏРµРј РµРіРѕ РїРѕР»СЏ
                 Purchase pur = new Purchase()
                 {
-                    Id = context.Purchase.ToList().Last().Id + 1,                // Id = context.Purchase.Count() + 1  - если то не сработает
+                    Id = context.Purchase.ToList().Last().Id + 1,                // Id = context.Purchase.Count() + 1  - РµСЃР»Рё С‚Рѕ РЅРµ СЃСЂР°Р±РѕС‚Р°РµС‚
                     CodeProduct = prod.Code,
                     Product = prod,
                     IdClient = cl.Id,
                     idManeger = man.Id,
                     DatePuschase = Convert.ToDateTime(DateBox.Text),
-                    Delivery = DeliveryBox.Text.ToLower().Equals("да") ? true : false,
+                    Delivery = DeliveryBox.Text.ToLower().Equals("РґР°") ? true : false,
                     PaymentType = PayBox.Text,
                     Client = cl,
                     Manager = man
                 };
-                //добавляем заказ в БД
+                //РґРѕР±Р°РІР»СЏРµРј Р·Р°РєР°Р· РІ Р‘Р”
                 context.Purchase.Add(pur);
-                //сохранение изменений
+                //СЃРѕС…СЂР°РЅРµРЅРёРµ РёР·РјРµРЅРµРЅРёР№
                 context.SaveChanges();
-                //переход на страницу Заказы
+                //РїРµСЂРµС…РѕРґ РЅР° СЃС‚СЂР°РЅРёС†Сѓ Р—Р°РєР°Р·С‹
                 NavigationService.Navigate(new Zakazi(context));
             }
-            catch (FormatException) //перейдет сюда, если исключение возникло на Convert.To...
+            catch (FormatException) //РїРµСЂРµР№РґРµС‚ СЃСЋРґР°, РµСЃР»Рё РёСЃРєР»СЋС‡РµРЅРёРµ РІРѕР·РЅРёРєР»Рѕ РЅР° Convert.To...
             {
-                MessageBox.Show("Ошибка вводимых данных!");
+                MessageBox.Show("РћС€РёР±РєР° РІРІРѕРґРёРјС‹С… РґР°РЅРЅС‹С…!");
             }
-            catch //перейдет сюда во всех остальных случаях
+            catch //РїРµСЂРµР№РґРµС‚ СЃСЋРґР° РІРѕ РІСЃРµС… РѕСЃС‚Р°Р»СЊРЅС‹С… СЃР»СѓС‡Р°СЏС…
             {
-                MessageBox.Show("Ошибка!");
+                MessageBox.Show("РћС€РёР±РєР°!");
             }
         }
     }
