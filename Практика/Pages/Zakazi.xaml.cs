@@ -34,7 +34,7 @@ namespace Практика.Pages
         }
         //вставить в Zakazi.xaml:
         //<ComboBox SelectionChanged="ChangeCategory" Name="categoryBox" Grid.Row="1" Grid.Column="1" Height="20" Width="350" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
-        
+
         //<ComboBox SelectionChanged = "ChangeCategory" Name="categoryBox" Grid.Row="1" Grid.Column="1" Height="20" Width="350" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
         //    <ComboBox.ItemTemplate>
         //        <DataTemplate>
@@ -46,34 +46,54 @@ namespace Практика.Pages
         //    </ComboBox.ItemTemplate>
         //</ComboBox>
 
-        private void zakazClick(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Zakazi(context));
-        }
+        /// <summary>
+        /// Нажатие на кнопку + (добавить заказ)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void AddClick(object sender, RoutedEventArgs e)
         {
+            //вызываем страницу Добавление заказа
             NavigationService.Navigate(new AddPage(context));
         }
 
+        /// <summary>
+        /// клик по надписи "Редактировать"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void UpdateClick(object sender, RoutedEventArgs e)
         {
+            //получаем заказ для редактирования
             Purchase zak = table.SelectedItem as Purchase;
+            //вызываем форму "Добавить заказ", но передаем в нее объект для редактирования
             NavigationService.Navigate(new AddPage(context, zak));
         }
 
-        //удаление
+        /// <summary>
+        /// Нажатие на гиперссылку "Удалить"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void DeleteClick(object sender, RoutedEventArgs e)
         {
+            //Запрос пользователю, точно ли он хочет удалить
             MessageBoxResult result = MessageBox.Show("Вы точно хотите удалить данный заказ?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
-                try
+                try //если в этом блоке произойдет исключение, программа не вылетит, а перейдет в блок catch
                 {
+                    //получаем заказ, по которому лкикнули "Удалить"
                     Purchase puri = table.SelectedItem as Purchase;
+                    //удаляем
                     context.Purchase.Remove(puri);
+                    //сохраняем изменения
                     context.SaveChanges();
-                    //table.ItemsSource = context.Purchase.ToList();
+                    //снова выводим список в таблицу
+                    table.ItemsSource = context.Purchase.ToList();
                 }
                 catch
                 {

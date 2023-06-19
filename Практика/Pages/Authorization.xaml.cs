@@ -24,6 +24,7 @@ namespace Практика.Pages
         Car_DealershipDBEntities context;
         DispatcherTimer timer;
         Window window;
+        User user;
         public Authorization(Car_DealershipDBEntities cont, Window w)
         {
             InitializeComponent();
@@ -93,7 +94,7 @@ namespace Практика.Pages
 
         private void CcClick(object sender, RoutedEventArgs e)
         {
-            Data dataWindow = new Data(context);
+            Data dataWindow = new Data(context, user);
             dataWindow.Show();
 
             //для страниц

@@ -21,6 +21,8 @@ namespace Практика.Pages
     public partial class MainMenuPage : Page
     {
         Car_DealershipDBEntities context;
+        //так как мы находимся на странице, мы не можем обратиться сразу к окну
+        //поэтому его получаем из предыдущей страницы
         Window Window;
         public MainMenuPage(Car_DealershipDBEntities cont, Window window)
         {
@@ -29,50 +31,27 @@ namespace Практика.Pages
             Window = window;
         }
 
+        /// <summary>
+        /// Клик по кнопке "Выход"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void exitClick(object sender, RoutedEventArgs e)
         {
-            //NavigationService.Navigate(new Authorization(context));
+            //закрытие окна
             Window.Close();
         }
+
+        /// <summary>
+        /// открытие страницы Заказы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void zakazClick(object sender, RoutedEventArgs e)
         {
             frameToBasePage.Navigate(new Zakazi(context));
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("He He");
-        }
-
-        private void Bez_Nal_Click(object sender, RoutedEventArgs e)
-        {
-            Purchase pur = new Purchase();
-            //var a = comboBox1.Text;
-            //var r = pur.PaymentType.Distinct().ToList();
-            //var e = pur.Where(XmlDataProvider => XmlDataProvider.PaymentType == a).ToList();
-            //table.ItemsSource = res;
-            //context.Purchase.Where(x=>x.PaymentType == a).ToList();
-
-
-
-            //удаление
-            MessageBoxResult result = MessageBox.Show("Вы точно хотите удалить данный заказ?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes)
-            {
-                try
-                {
-                    Purchase puri = (sender as Hyperlink).DataContext as Purchase;
-                    context.Purchase.Remove(puri);
-                    context.SaveChanges();
-                    //table.ItemsSource = context.Purchase.ToList();
-                }
-                catch
-                {
-                    MessageBox.Show("Ошибка!");
-                }
-            }
-
         }
 
         private void TovarClick(object sender, RoutedEventArgs e)

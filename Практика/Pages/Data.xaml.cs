@@ -20,21 +20,26 @@ namespace Практика.Pages
     public partial class Data : Window
     {
         Car_DealershipDBEntities context;
-        public Data(Car_DealershipDBEntities cont)
+        User _user;
+        public Data(Car_DealershipDBEntities cont, User user)
         {
             InitializeComponent();
             context = cont;
+            _user = user;
         }
 
         private void SeeClick(object sender, RoutedEventArgs e)
         {
+            //if (_user.Login == loginBox.Text && _user.TabNumber == Convert.ToInt32(numBox.Text))
+            //    MessageBox.Show($"Ваш пароль: {_user.Password}", "Пароль", MessageBoxButton.OK, MessageBoxImage.Information);
+
             string log = loginBox.Text;
             int num = Convert.ToInt32(numBox.Text);
             User user = context.User.Find(log);
             if (user != null)
             {
                 if (user.TabNumber == num)
-                {   
+                {
                     MessageBox.Show(user.Password, "Пароль");
                 }
                 else
