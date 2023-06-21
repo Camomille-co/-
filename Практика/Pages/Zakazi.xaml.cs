@@ -32,19 +32,6 @@ namespace Практика.Pages
             categoryBox.ItemsSource = categoryList;
             categoryBox.SelectedIndex = 0;
         }
-        //вставить в Zakazi.xaml:
-        //<ComboBox SelectionChanged="ChangeCategory" Name="categoryBox" Grid.Row="1" Grid.Column="1" Height="20" Width="350" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
-
-        //<ComboBox SelectionChanged = "ChangeCategory" Name="categoryBox" Grid.Row="1" Grid.Column="1" Height="20" Width="350" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
-        //    <ComboBox.ItemTemplate>
-        //        <DataTemplate>
-        //            <TextBlock>
-        //                <Run Text = "{Binding PaymentType}" />
-        //                < Run Text="{Binding Delivery}"/>
-        //            </TextBlock>
-        //        </DataTemplate>
-        //    </ComboBox.ItemTemplate>
-        //</ComboBox>
 
         /// <summary>
         /// Нажатие на кнопку + (добавить заказ)
@@ -109,7 +96,6 @@ namespace Практика.Pages
             {
                 Purchase pur = categoryBox.SelectedItem as Purchase;
                 list = list.Where(x => x.PaymentType == pur.PaymentType).ToList();
-                //list = list.Where(x => x.Delivery == pur.Delivery && x.PaymentType == pur.PaymentType).ToList();
             }
             if (!string.IsNullOrWhiteSpace(poiskBox.Text))
             {

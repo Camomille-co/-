@@ -20,12 +20,13 @@ namespace Практика.Pages
     public partial class Data : Window
     {
         Car_DealershipDBEntities context;
-        User _user;
-        public Data(Car_DealershipDBEntities cont, User user)
+        //User _user;
+        public Data(Car_DealershipDBEntities cont)
+        //public Data(Car_DealershipDBEntities cont, User user)
         {
             InitializeComponent();
             context = cont;
-            _user = user;
+            //_user = user;
         }
 
         private void SeeClick(object sender, RoutedEventArgs e)

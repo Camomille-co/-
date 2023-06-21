@@ -24,7 +24,7 @@ namespace Практика.Pages
         Car_DealershipDBEntities context;
         DispatcherTimer timer;
         Window window;
-        User user;
+        //User user;
         public Authorization(Car_DealershipDBEntities cont, Window w)
         {
             InitializeComponent();
@@ -54,7 +54,7 @@ namespace Практика.Pages
             {
                 if (user.Password.Equals(pass))
                 {
-                    //MessageBox.Show("Вы успешно авторизованы!!!");
+                    MessageBox.Show("Вы успешно авторизованы!!!");
                     countClick = 0;
                     NavigationService.Navigate(new MainMenuPage(context, window));
 
@@ -67,8 +67,6 @@ namespace Практика.Pages
                         ButtonMy.Visibility = Visibility.Visible;
                         ButtonEnter.IsEnabled = false;
                         timer.Start();
-
-
                     }
                 }
             }
@@ -80,8 +78,6 @@ namespace Практика.Pages
                     ButtonMy.Visibility = Visibility.Visible;
                     ButtonEnter.IsEnabled = false;
                     timer.Start();
-
-
                 }
             }
         }
@@ -94,7 +90,8 @@ namespace Практика.Pages
 
         private void CcClick(object sender, RoutedEventArgs e)
         {
-            Data dataWindow = new Data(context, user);
+            Data dataWindow = new Data(context);
+            //Data dataWindow = new Data(context, user);
             dataWindow.Show();
 
             //для страниц
