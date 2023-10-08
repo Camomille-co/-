@@ -29,6 +29,21 @@ namespace Практика.Pages
             InitializeComponent();
             context = cont;
             Window = window;
+
+            //User user = new User();
+            //foreach (var item in context.User.ToList())
+            //{
+            //    if (item.Post == "Администратор")
+            //    {
+            //        ZakazBtn.Visibility = Visibility.Hidden;
+            //        TovarBtn.Visibility = Visibility.Collapsed;
+            //    }
+            //    if (item.Post == "Менеджер")
+            //    {
+            //        TovarBtn.Visibility = Visibility.Hidden;
+            //        ZakazBtn.Visibility = Visibility.Collapsed;
+            //    }
+            //}
         }
 
         /// <summary>
@@ -52,6 +67,14 @@ namespace Практика.Pages
         private void zakazClick(object sender, RoutedEventArgs e)
         {
             frameToBasePage.Navigate(new Zakazi(context));
+            //foreach (var item in context.User.ToList())
+            //{
+            //    if (item.Post.Equals("Администратор"))
+            //    {
+            //        frameToBasePage.Navigate(new Zakazi(context));
+            //    }
+
+            //}
         }
 
         private void TovarClick(object sender, RoutedEventArgs e)

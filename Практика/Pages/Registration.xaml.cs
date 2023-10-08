@@ -28,7 +28,14 @@ namespace Практика.Pages
 
         private void AddClick(object sender, RoutedEventArgs e)
         {
-            User user = new User() { Login = loginBox.Text, Password = passwordBox.Text, TabNumber = Convert.ToInt32(numberBox.Text), FIO = fioBox.Text, Post = postBox.Text };
+            User user = new User() 
+            { 
+                Login = loginBox.Text, 
+                Password = passwordBox.Text, 
+                TabNumber = Convert.ToInt32(numberBox.Text), 
+                FIO = fioBox.Text, 
+                Post = postBox.Text 
+            };
             context.User.Add(user);
             context.SaveChanges();
             this.Close();

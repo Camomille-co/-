@@ -46,6 +46,8 @@ namespace Практика.Pages
         int countClick = 0;
         private void EnterClick(object sender, RoutedEventArgs e)
         {
+            //NavigationService.Navigate(new MainMenuPage(context, window));
+
             countClick++;
             string log = loginBox.Text;
             string pass = passwordBox.Password;

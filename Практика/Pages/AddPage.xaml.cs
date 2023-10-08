@@ -134,7 +134,7 @@ namespace Практика.Pages
                 //создаем заказ и заполняем его поля
                 Purchase pur = new Purchase()
                 {
-                    Id = context.Purchase.ToList().Last().Id + 1,                // Id = context.Purchase.Count() + 1  - если то не сработает
+                    Id = context.Purchase.ToList().Last().Id + 1,                               // Id = context.Purchase.Count() + 1  - если то не сработает
                     CodeProduct = prod.Code,
                     Product = prod,
                     IdClient = cl.Id,
